@@ -76,7 +76,7 @@ spec:
                     path: sample_code.py
             - name: certs
               secret:
-                name: ray-job--meb10000
+                secretName: ray-job--meb10000
             - name: hadoop
               configMap:
                 name: ray-job-hadoopconf
