@@ -3,6 +3,8 @@ set -e
 # get requirements from ray repo
 rm -rf python
 git clone https://github.com/ray-project/ray.git
+mkdir -p python/requirements/ml
+mkdir -p python/requirements/docker
 cp ray/python/*requirements.txt ./python 
 cp ray/python/requirements/ml/*requirements.txt ./python/requirements/ml
 cp ray/python/requirements/docker/*requirements.txt ./python/requirements/docker
