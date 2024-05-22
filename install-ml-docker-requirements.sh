@@ -76,6 +76,3 @@ sudo rm ./*requirements*.txt
 
 # Download libhdfs.so and enable libhdfs log
 wget https://repo.hops.works/dev/salman/libhdfs.so -P ~
-export HADOOP_CONF_DIR=/srv/hops/hadoop/etc/hadoop
-export LIBHDFS_ENABLE_LOG=true
-export LIBHDFS_LOG_FILE=/tmp/libhdfs.log

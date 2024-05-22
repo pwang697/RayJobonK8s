@@ -20,3 +20,8 @@ RUN $HOME/anaconda3/bin/pip freeze > /home/ray/pip-freeze.txt
 
 # Make sure tfp is installed correctly and matches tf version.
 RUN python -c "import tensorflow_probability"
+
+# Set environment variables for HopsFS
+ENV HADOOP_CONF_DIR=/srv/hops/hadoop/etc/hadoop
+ENV LIBHDFS_ENABLE_LOG=true
+ENV LIBHDFS_LOG_FILE=/tmp/libhdfs.log
