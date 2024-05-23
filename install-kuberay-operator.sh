@@ -11,9 +11,9 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 rm -rf get_helm.sh
 
-# Add helm repo
+# Install both CRDs and KubeRay operator v1.1.0 as user:kubernetes in the specified namespace
+su - kubernetes <<EOF
 helm repo add kuberay https://ray-project.github.io/kuberay-helm/
 helm repo update
-
-# Install both CRDs and KubeRay operator v1.1.0 in the specified namespace
-su - kubernetes -c "helm -n $KUBE_NAMESPACE install kuberay-operator kuberay/kuberay-operator --version 1.1.0"
+helm -n $KUBE_NAMESPACE install kuberay-operator kuberay/kuberay-operator --version 1.1.0
+EOF
