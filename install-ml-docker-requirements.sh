@@ -74,5 +74,6 @@ sudo rm ./*requirements*.txt
 # tar -xf ~/.mujoco/mujoco-2.1.1-linux-x86_64.tar.gz
 # export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:/root/.mujoco/mujoco-2.1.1/bin
 
-# Download libhdfs.so and enable libhdfs log
+# Download libhdfs.so and create a dummy libjvm.so
 wget https://repo.hops.works/dev/salman/libhdfs.so -P ~
+touch ~/libjvm.so
