@@ -102,7 +102,20 @@ spec:
                   requests:
                     cpu: "200m"
                 # mount the volumes
+                volumeMounts:
+                  - mountPath: /srv/hops/certificates
+                    name: certs
+                  - mountPath: /srv/hops/hadoop/etc/hadoop
+                    name: hadoop
             # here create the volumes as in the head
+            volumes:
+              # You set volumes at the Pod level, then mount them into containers inside that Pod
+              - name: certs
+                secret:
+                  secretName: ray-job--meb10000
+              - name: hadoop
+                configMap:
+                  name: ray-job-hadoopconf
   # SubmitterPodTemplate is the template for the pod that will run the `ray job submit` command against the RayCluster.
   # If SubmitterPodTemplate is specified, the first container is assumed to be the submitter container.
   # submitterPodTemplate:
@@ -129,8 +142,8 @@ data:
     from ray import data
 
     ray.init()
-    hdfs_path = "hdfs://hopsworks0.logicalclocks.com/ray-job/datasets/ddos_benchmark.parquet"
-    
+    hdfs_path = "hdfs:///rpc.namenode.consul.service:8020/Projects/ray_job/Resources/ddos_benchmark.parquet"
+
     try:
         ds = data.read_parquet(hdfs_path)
         print(ds.head())
