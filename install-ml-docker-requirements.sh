@@ -75,5 +75,5 @@ sudo rm ./*requirements*.txt
 # export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-}:/root/.mujoco/mujoco-2.1.1/bin
 
 # Download libhdfs.so
-mkdir -p /srv/hops/hadoop/lib/native/libhdfs-golang && wget https://repo.hops.works/dev/salman/libhdfs.so -P /srv/hops/hadoop/lib/native/libhdfs-golang
-chmod 777 /srv/hops/hadoop/lib/native/libhdfs-golang/libhdfs.so
+sudo mkdir -p /srv/hops/hadoop/lib/native/libhdfs-golang && sudo wget https://repo.hops.works/dev/salman/libhdfs.so -P /srv/hops/hadoop/lib/native/libhdfs-golang
+sudo chmod 777 /srv/hops/hadoop/lib/native/libhdfs-golang/libhdfs.so
