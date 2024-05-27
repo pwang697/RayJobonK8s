@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 # set ray version here
-RAY_VERSION=2.22.0
+RAY_VERSION=2.23.0
 # get requirements from ray repo
 rm -rf python
 git clone -b releases/$RAY_VERSION https://github.com/ray-project/ray.git
