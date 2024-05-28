@@ -26,3 +26,4 @@ ENV LD_LIBRARY_PATH=/srv/hops/hadoop/lib/native/libhdfs-golang
 ENV HADOOP_CONF_DIR=/srv/hops/hadoop/etc/hadoop
 ENV LIBHDFS_ENABLE_LOG=true
 ENV LIBHDFS_LOG_FILE=/tmp/libhdfs.log
+ENV ARROW_LIBHDFS_DIR=/srv/hops/hadoop/lib/native/libhdfs-golang
