@@ -146,6 +146,6 @@ data:
 
     try:
         ds = data.read_parquet(hdfs_path)
-        print(ds.head())
+        print("done!")
     except Exception as e:
         print(e)
