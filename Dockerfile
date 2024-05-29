@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:experimental
 ARG BASE_IMAGE
 ARG FULL_BASE_IMAGE=rayproject/ray:"$BASE_IMAGE"
 FROM "$FULL_BASE_IMAGE"
