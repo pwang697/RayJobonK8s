@@ -27,9 +27,9 @@ USER root
 RUN apt-get update -y && apt-get install openjdk-8-jdk -y
 ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 # Install Hadoop core
-COPY install-core.sh ./
+COPY install-core.sh /root/install-core.sh
 RUN --mount=type=secret,id=wgetrc,dst=/root/.wgetrc \
-    chmod +x ./core_install.sh && ./core_install.sh && rm ./core_install.sh
+    chmod +x /root/install-core.sh && /root/install-core.sh && rm /root/install-core.sh
 ENV HADOOP_HOME=/srv/hops/hadoop/hadoop-3.2.0.13-EE-SNAPSHOT
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
