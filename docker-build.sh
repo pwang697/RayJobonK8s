@@ -13,5 +13,5 @@ cp ray/python/requirements/docker/*requirements.txt ./python/requirements/docker
 cp ray/python/*requirements_compiled.txt ./python
 rm -rf ray
 #Build and push docker image
-docker build --build-arg BASE_IMAGE=$RAY_VERSION --progress=plain --tag registry.service.consul:4443/ray-ml:$RAY_VERSION .
+DOCKER_BUILDKIT=1 docker build --secret id=wgetrc,src=wgetrc --build-arg BASE_IMAGE=$RAY_VERSION --progress=plain --tag registry.service.consul:4443/ray-ml:$RAY_VERSION .
 docker push registry.service.consul:4443/ray-ml:$RAY_VERSION
