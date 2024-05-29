@@ -142,7 +142,7 @@ data:
     from ray import data
 
     ray.init()
-    hdfs_path = "hdfs://rpc.namenode.consul.service:8020/Projects/ray_job/Resources/ddos_benchmark.parquet?user=ray_job__meb10000"
+    hdfs_path = "hdfs://10.0.2.15:8020/Projects/ray_job/Resources/ddos_benchmark.parquet?user=ray_job__meb10000"
 
     try:
         ds = data.read_parquet(hdfs_path)
