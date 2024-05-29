@@ -31,7 +31,7 @@ ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
 COPY install-core.sh /root/install-core.sh
 RUN --mount=type=secret,id=wgetrc,dst=/root/.wgetrc \
     chmod +x /root/install-core.sh && /root/install-core.sh && rm /root/install-core.sh
-ENV HADOOP_HOME=/srv/hops/hadoop/hadoop-3.2.0.13-EE-SNAPSHOT
+ENV HADOOP_HOME=/srv/hops/hadoop
 ENV HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
 # Set environment variables

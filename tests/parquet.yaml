@@ -57,7 +57,7 @@ spec:
                   name: tests
                 - mountPath: /srv/hops/certificates
                   name: certs
-                - mountPath: /srv/hops/hadoop/hadoop-3.2.0.13-EE-SNAPSHOT/etc/hadoop
+                - mountPath: /srv/hops/hadoop/etc/hadoop
                   name: hadoop
           volumes:
             # You set volumes at the Pod level, then mount them into containers inside that Pod
@@ -105,7 +105,7 @@ spec:
                 volumeMounts:
                   - mountPath: /srv/hops/certificates
                     name: certs
-                  - mountPath: /srv/hops/hadoop/hadoop-3.2.0.13-EE-SNAPSHOT/etc/hadoop
+                  - mountPath: /srv/hops/hadoop/etc/hadoop
                     name: hadoop
             # here create the volumes as in the head
             volumes:
