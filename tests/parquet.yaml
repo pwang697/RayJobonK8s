@@ -140,12 +140,15 @@ data:
   test_code.py: |
     import ray
     from ray import data
+    import fsspec
 
     ray.init()
-    hdfs_path = "hdfs://10.0.2.15:8020/Projects/ray_job/Resources/ddos_benchmark.parquet?user=ray_job__meb10000"
+    hdfs = fsspec.filesystem('hdfs', host='10.0.2.15', port=8020, user='ray_job__meb10000')
 
     try:
-        ds = data.read_parquet(hdfs_path)
-        print("done!")
+        ds = data.read_parquet('/Projects/ray_job/Resources/ddos_benchmark.parquet', filesystem=hdfs)
+        ds.show(limit=1)
+        top_ds = ds.limit(5)
+        top_ds.write_parquet('/Projects/ray_job/Resources', filesystem=hdfs)
     except Exception as e:
         print(e)

@@ -21,3 +21,6 @@ fi
 #remove all useless jars etc
 rm -rf /srv/hops/hadoop/etc
 rm -rf /srv/hops/hadoop/sbin
+
+chown -R ray:hadoop /srv
+chmod 775 -R /srv
